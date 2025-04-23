@@ -7,6 +7,7 @@
     <title>Puslespil</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/igd3tza.css">
 </head>
 
 <body>
@@ -14,16 +15,16 @@
     <div id="game">
         <div id="kroppen">
             <img src="img/krop.png" alt="Krop" id="krop">
-            <div class="drop-zone" data-organ="brain" style="top: 15%; left: 38%;">
+            <div class="drop-zone" data-organ="brain" style="top: 3%; left: 34%;">
                 <div class="drop-zone-btn"></div>
             </div>
-            <div class="drop-zone" data-organ="heart" style="top: 50%; left: 38%;">
+            <div class="drop-zone" data-organ="heart" style="top: 26%; left: 34%;">
                 <div class="drop-zone-btn"></div>
             </div>
-            <div class="drop-zone" data-organ="intestine" style="top: 73%; left: 38%;">
+            <div class="drop-zone" data-organ="intestine" style="top: 40%; left: 34%;">
                 <div class="drop-zone-btn"></div>
             </div>
-              <img src="img/krop-forkert.png" alt="forkert" id="forkert">
+            <img src="img/krop-forkert.png" alt="forkert" id="forkert">
             <img src="img/krop-korrekt.png" alt="korrekt" id="korrekt">
         </div>
 
@@ -35,7 +36,18 @@
 
         <audio id="success-sound" src="mp3/success.mp3"></audio>
         <audio id="error-sound" src="mp3/error.mp3"></audio>
+    </div>
 
+    <div id="overlay" class="overlay"></div>
+
+    <div id="startPopup" class="popup">
+        <p>Hjælp med at trække organerne på deres rigtige plads!</p>
+        <button class="start" onclick="closePopup()">Start</button>
+    </div>
+
+    <div id="slutPopup" class="popup">
+        <p>Tillykke! Du har sat alle organerne på plads!</p>
+        <button class="proevigen" onclick="resetGame()">Prøv igen</button>
     </div>
 
 
