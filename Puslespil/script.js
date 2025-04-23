@@ -2,6 +2,9 @@ const organs = document.querySelectorAll('.organ');
 const dropZones = document.querySelectorAll('.drop-zone');
 const successSound = document.getElementById('success-sound');
 const errorSound = document.getElementById('error-sound');
+const korrekt = document.getElementById('korrekt');
+const forkert = document.getElementById('forkert');
+
 
 organs.forEach(organ => {
     organ.addEventListener('dragstart', e => {
@@ -21,8 +24,14 @@ dropZones.forEach(zone => {
   
       if (draggedOrgan === correctOrgan) {
         successSound.play();
+        korrekt.style.animation = 'none';
+        void korrekt.offsetWidth; // Trigger reflow
+        korrekt.style.animation = 'lys 1s';
       } else {
         errorSound.play();
+        forkert.style.animation = 'none';
+        void forkert.offsetWidth; // Trigger reflow
+        forkert.style.animation = 'lys 1s';
       }
     });
   });
